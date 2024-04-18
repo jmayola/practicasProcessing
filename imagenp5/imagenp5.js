@@ -1,31 +1,59 @@
 let bg;
 let y = 0;
+let izq = false
+let der = false
+let arriba = false
+let abajo = false
 let x = 0;
-
 function setup() {
   createCanvas(300, 300);
-  // The background image must be the same size as the parameters
-  // into the size() method. In this program, the size of the image
-  // is 640 x 360 pixels.
-  bg = loadImage("/home/mayola/Imágenes/maquinasvg.jpg");
+  bg = loadImage("maquinasvg.jpg");
 }
 function draw() {
   background(255,255,255);
     noStroke();
-
   image(bg, x, y);
+  if( izq == true){
+    x--
+  }
+  if(der == true){
+    x++;  
+  }
+  if(abajo == true){
+    y++;  
+  }
+  if(arriba == true){
+    y--;  
+  }
 }
 function keyPressed(){
   if(key == 'a'){
-    x--;  
+    izq = true
   }
   if(key == 'd'){
-    x++;  
+    der = true
+
   }
   if(key == 's'){
-    y++;  
+    abajo = true  
   }
   if(key == 'w'){
-    y--;  
+    arriba = true
   }
+}
+function keyReleased(){
+  if(key == 'a'){
+    izq = false
+  }
+  if(key == 'd'){
+    der = false
+
+  }
+  if(key == 's'){
+    abajo = false  
+  }
+  if(key == 'w'){
+    arriba = false
+  }
+
 }
