@@ -1,11 +1,11 @@
-int r = 0;
-int g = 0;
-int b = 0;
-void setup(){
-  size(800,600);
+let r = 0;
+let g = 0;
+let b = 0;
+function setup(){
+  createCanvas(800,600);
 }
 
-void draw(){
+function draw(){
   background(240,240,255);
   noStroke();
   rect(300,200, 200,125);
